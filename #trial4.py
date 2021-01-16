@@ -1,3 +1,4 @@
+#Motion detection.
 import cv2
 cam= cv2.VideoCapture(0)
 while cam.isOpened():
@@ -8,7 +9,7 @@ while cam.isOpened():
     blur = cv2.GaussianBlur(grey,(5,5),0) #blur to evenup the surfaces and reduce noise
     _, thresh = cv2.threshold(blur,20,255,cv2.THRESH_BINARY) #sharpening blur image
     dilated = cv2.dilate(thresh,None,iterations=3)
-    contours,_=cv2.findContours(dilated,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
+    contours,_=cv2.findContours(dilated,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE) #drawing contours
     cv2.drawContours(frame1,contours,-1,(0,255,0),5)
     if cv2.waitKey(1)==ord('q'):
         break
