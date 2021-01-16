@@ -1,3 +1,4 @@
+#Blurring subtrating images and then sharpening then with given threshold.
 import cv2
 cam= cv2.VideoCapture(0)
 while cam.isOpened():
