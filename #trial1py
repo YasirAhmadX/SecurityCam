@@ -1,0 +1,8 @@
+#Opening camera on new window.
+import cv2
+cam= cv2.VideoCapture(0) #0 stats inbuilt webcam
+while cam.isOpened():
+    ret,frame = cam.read()
+    if cv2.waitKey(10)==ord('q'): #Will terminate when 'q' is pressed.
+        break
+    cv2.imshow('My Cam',frame) #'My Cam' will be the camera window name
